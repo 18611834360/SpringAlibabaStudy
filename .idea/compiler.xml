@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="stock" />
+        <module name="order" />
+        <module name="order-ribbon" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="order" target="8" />
+      <module name="order-nacos" target="8" />
+      <module name="order-ribbon" target="8" />
+      <module name="springcloudalibaba" target="1.5" />
+      <module name="stock" target="8" />
+      <module name="stock (1)" target="8" />
+      <module name="stock-nacos" target="8" />
+      <module name="testartifact" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="order" options="" />
+      <module name="springcloudalibaba" options="" />
+      <module name="stock" options="" />
+    </option>
+  </component>
+</project>
