@@ -14,4 +14,5 @@ spring:
         namespace: public
         #service:默认选${spring.application.name}
         ip: 127.0.0.1
+        weight: 5
     #   ephemeral: false   #永久实例，即使down机了也不会删除实例

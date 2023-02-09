@@ -25,4 +25,5 @@ public class OrderApplication {
         RestTemplate restTemplate=builder.build();
         return restTemplate;
     }
+
 }

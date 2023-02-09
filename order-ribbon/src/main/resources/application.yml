@@ -14,3 +14,11 @@ spring:
         password: nacos
         namespace: public
         ip: 127.0.0.1
+stock-service:
+  ribbon:
+    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+ribbon:
+  eager-load:
+    enabled: true
+    clients: stock-service

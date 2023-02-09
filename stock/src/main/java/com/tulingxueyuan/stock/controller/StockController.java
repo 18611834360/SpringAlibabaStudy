@@ -1,5 +1,6 @@
 package com.tulingxueyuan.stock.controller;
 
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
