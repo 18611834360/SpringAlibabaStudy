@@ -6,6 +6,9 @@
         <module>order</module>
         <module>stock</module>
         <module>order-ribbon</module>
+        <module>order-balancer</module>
+        <module>order-openfeign</module>
+
 
     </modules>
 <!--    <parent>-->

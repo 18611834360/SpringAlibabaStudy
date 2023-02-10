@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class StockController {
     @RequestMapping("/reduct")
     public String reduct(){
-        System.out.println("加上了nacos，库存扣减成功");
+        System.out.println("进入stock-service，库存扣减成功");
         return "stock-service:nacos 扣减库存 分布式!!!";
     }
 }
