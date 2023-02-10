@@ -18,7 +18,16 @@ spring:
 #    loadbalancer:
 #      ribbon:
 #        enabled: false
-
+##logging:
+##  level:
+##    com.tulingxueyuan.order.feign:debug
+#feign:
+#  client:
+#    config:
+#      stock-service:
+#        loggerlevel:BASIC
+#        connectTimeout:5000
+#        readTimeout:3000
 
 
 
