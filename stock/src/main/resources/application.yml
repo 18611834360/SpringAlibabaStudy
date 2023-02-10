@@ -1,6 +1,7 @@
 server:
   port:
     8021
+
 # nacos 服务注册配置
 spring:
   application:

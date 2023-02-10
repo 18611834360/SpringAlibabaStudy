@@ -18,10 +18,10 @@ public class OrderApplication {
         SpringApplication.run(OrderApplication.class ,args);
     }
 
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate(RestTemplateBuilder builder){
-        RestTemplate restTemplate=builder.build();
-        return restTemplate;
-    }
+//    @Bean
+//    @LoadBalanced
+//    public RestTemplate restTemplate(RestTemplateBuilder builder){
+//        RestTemplate restTemplate=builder.build();
+//        return restTemplate;
+//    }
 }

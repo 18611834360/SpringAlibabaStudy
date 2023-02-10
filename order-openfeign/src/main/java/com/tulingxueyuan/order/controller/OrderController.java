@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 public class OrderController {
 
     @Autowired
-    RestTemplate restTemplate1;
+//    RestTemplate restTemplate1;
     StockFeignService stockFeignService;
 
 
