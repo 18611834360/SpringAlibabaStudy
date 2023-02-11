@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: nacos-config  #自动根据服务名拉取dataid位服务名的配置文件
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8847
+      config:
+        namespace: public
+        file-extension: yaml

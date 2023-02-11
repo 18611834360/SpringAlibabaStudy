@@ -4,8 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Order/order.iml" filepath="$PROJECT_DIR$/Order/order.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-balancer/order-balancer.iml" filepath="$PROJECT_DIR$/order-balancer/order-balancer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-balancer-nacosconfig/order-balancer-nacosconfig.iml" filepath="$PROJECT_DIR$/order-balancer-nacosconfig/order-balancer-nacosconfig.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-openfeign/order-openfeign.iml" filepath="$PROJECT_DIR$/order-openfeign/order-openfeign.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-ribbon/order-ribbon.iml" filepath="$PROJECT_DIR$/order-ribbon/order-ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-ribbon-sentinel/order-ribbon-sentinel.iml" filepath="$PROJECT_DIR$/order-ribbon-sentinel/order-ribbon-sentinel.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloudalibaba.iml" filepath="$PROJECT_DIR$/springcloudalibaba.iml" />
       <module fileurl="file://$PROJECT_DIR$/stock/stock.iml" filepath="$PROJECT_DIR$/stock/stock.iml" />
     </modules>

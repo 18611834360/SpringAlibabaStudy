@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="order-balancer-nacosconfig" />
+        <module name="order-balancer" />
+        <module name="order-ribbon-sentinel" />
         <module name="order-openfeign" />
         <module name="stock" />
-        <module name="order-balancer" />
         <module name="order" />
         <module name="order-ribbon" />
       </profile>
@@ -16,10 +18,12 @@
     <bytecodeTargetLevel>
       <module name="order" target="8" />
       <module name="order-balancer" target="8" />
+      <module name="order-balancer-nacosconfig" target="8" />
       <module name="order-nacos" target="8" />
       <module name="order-openfeign" target="8" />
       <module name="order-ribbon" target="8" />
       <module name="order-ribbon (1)" target="8" />
+      <module name="order-ribbon-sentinel" target="8" />
       <module name="springcloudalibaba" target="1.5" />
       <module name="stock" target="8" />
       <module name="stock (1)" target="8" />

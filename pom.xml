@@ -8,6 +8,10 @@
         <module>order-ribbon</module>
         <module>order-balancer</module>
         <module>order-openfeign</module>
+        <module>order-balancer-nacosconfig</module>
+        <module>order-ribbon-sentinel</module>
+
+
 
 
     </modules>

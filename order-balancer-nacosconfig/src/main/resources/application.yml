@@ -1,11 +1,11 @@
 server:
   port:
-    8010
-
+    8060
+#
 # nacos 服务注册配置
 spring:
   application:
-    name: stock-service  #nacos 服务名称
+    name: nacos-config #nacos 服务名称
   cloud:
     nacos:
       server-addr: 127.0.0.1:8847 #nacos 服务其地址
@@ -13,7 +13,12 @@ spring:
         username: nacos
         password: nacos
         namespace: public
-        #service:默认选${spring.application.name}
         ip: 127.0.0.1
-        weight: 5
-    #   ephemeral: false   #永久实例，即使down机了也不会删除实例
+#
+#    loadbalancer:
+#      ribbon:
+#        enabled: false
+#
+
+
+

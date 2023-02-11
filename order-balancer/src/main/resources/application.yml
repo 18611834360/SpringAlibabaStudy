@@ -1,6 +1,6 @@
 server:
   port:
-    7020
+    8030
 
 # nacos 服务注册配置
 spring:
