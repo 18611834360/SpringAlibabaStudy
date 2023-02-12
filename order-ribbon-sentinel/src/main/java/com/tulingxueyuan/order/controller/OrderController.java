@@ -21,6 +21,7 @@ public class OrderController {
     String port;
 
     @RequestMapping("/add")
+    @SentinelResource(value="add",blockHandler="flowBlockHandler")
     public String add(){
         System.out.println("下单成功");
         String msg = restTemplate.getForObject("http://order-ribbon-sentinel-service/order/get",String.class);

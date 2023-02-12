@@ -18,6 +18,15 @@ spring:
       transport:
         dashboard: 127.0.0.1:5080
       web-context-unify: false  #解决链路树问题，默认为true时没有维护链路树
+      datasource:
+        flow-rule:   #可以自定义
+          nacos:
+            servver-addr : 127.0.0.1:8847
+            username: nacos
+            password: nacos
+            dataId: order-sentinel-flow-rule    #对应nacos中的配置dataId
+            rule-type: flow
+
 #stock-service:
 #  ribbon:
 #    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

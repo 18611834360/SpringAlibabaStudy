@@ -11,8 +11,8 @@
         <module name="order-ribbon-sentinel" />
         <module name="order-openfeign" />
         <module name="stock" />
-        <module name="order" />
         <module name="order-ribbon" />
+        <module name="order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
