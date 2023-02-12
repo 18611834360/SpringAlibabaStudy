@@ -16,11 +16,33 @@ spring:
 #          order: 8001
           predicates:
             - Path=/order-service/**
+#            ‐ After=2019‐12‐31T23:59:59.789+08:00[Asia/Shanghai]            - After=
+#            - Method=
+#            - RemoteAddr=127.0.0.1
+#            - Cookie=
+#            - Header=
+#            - Query=
           filters:
-            - StripPrefix=1
+            - StripPrefix=1   #将http://localhost:8070/order-service/order/add中的前缀/order-service去掉
+            - AddRequestHeader=X-Request-Color,red   #增加请求头信息
+#      globalcors:
+#        cors-configurations:
+#          '[/**]'   #允许跨域访问的资源
+#          allowedOrigins: "*"
+#          allowdMethods:
+#            -GET
+#            -PUT
+
+
     nacos:
       server-addr: 127.0.0.1:8847
       discovery:
         username: nacos
         password: nacos
         namespace: public
+
+    #gateway整合sentinel
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:5080
+      web-context-unify: false  #解决链路树问题，默认为true时没有维护链路树

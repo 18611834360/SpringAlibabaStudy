@@ -4,6 +4,7 @@ import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -19,6 +20,16 @@ public class OrderController {
     RestTemplate restTemplate;
     @Value("${server.port}")
     String port;
+
+
+    @RequestMapping("/head")
+    @SentinelResource(value="head",blockHandler="flowBlockHandler")
+    public String head(@RequestHeader("X-Request-Color") String color){
+        System.out.println("head !");
+        String msg = restTemplate.getForObject("http://order-ribbon-sentinel-service/order/get",String.class);
+        return "order-service/order/head调用："+port+color;
+//        return "order-ribbon-sentinel-service:order-service/order/add调用:"+port;
+    }
 
     @RequestMapping("/add")
     @SentinelResource(value="add",blockHandler="flowBlockHandler")
