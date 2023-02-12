@@ -1,0 +1,26 @@
+server:
+  port:
+    8090
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true
+      routes:
+        - id: order-route
+          uri: lb://order-ribbon-sentinel-service
+#          order: 8001
+          predicates:
+            - Path=/order-service/**
+          filters:
+            - StripPrefix=1
+    nacos:
+      server-addr: 127.0.0.1:8847
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
