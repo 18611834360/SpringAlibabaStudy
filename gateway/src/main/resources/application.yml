@@ -6,10 +6,10 @@ spring:
     name: api-gateway
   cloud:
     gateway:
-      discovery:
-        locator:
-          lowerCaseServiceId: true
-          enabled: true
+#      discovery:
+#        locator:
+#          lowerCaseServiceId: true
+#          enabled: true
       routes:
         - id: order-route
           uri: lb://order-ribbon-sentinel-service
