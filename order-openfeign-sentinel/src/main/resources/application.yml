@@ -19,7 +19,7 @@ spring:
 #    com.tulingxueyuan.order.feign:debug
 #sentinel:
 #  transport:
-#    dashboard: 127.0.0.1:5080
+#    dashboard: 127.0.0.1:8858
 #  web-context-unify: false  #解决链路树问题，默认为true时没有维护链路树
 feign:
   sentinel:
