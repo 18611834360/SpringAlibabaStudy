@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/order-openfeign/order-openfeign.iml" filepath="$PROJECT_DIR$/order-openfeign/order-openfeign.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-ribbon/order-ribbon.iml" filepath="$PROJECT_DIR$/order-ribbon/order-ribbon.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-ribbon-sentinel/order-ribbon-sentinel.iml" filepath="$PROJECT_DIR$/order-ribbon-sentinel/order-ribbon-sentinel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-order-mybatis-seata/springboot-order-mybatis-seata.iml" filepath="$PROJECT_DIR$/springboot-order-mybatis-seata/springboot-order-mybatis-seata.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloudalibaba.iml" filepath="$PROJECT_DIR$/springcloudalibaba.iml" />
       <module fileurl="file://$PROJECT_DIR$/stock/stock.iml" filepath="$PROJECT_DIR$/stock/stock.iml" />
     </modules>

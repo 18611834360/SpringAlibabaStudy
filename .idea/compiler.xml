@@ -9,6 +9,7 @@
         <module name="order-balancer-nacosconfig" />
         <module name="order-balancer" />
         <module name="order-ribbon-sentinel" />
+        <module name="springboot-order-mybatis-seata" />
         <module name="order-openfeign" />
         <module name="stock" />
         <module name="gateway" />
@@ -26,6 +27,7 @@
       <module name="order-ribbon" target="8" />
       <module name="order-ribbon (1)" target="8" />
       <module name="order-ribbon-sentinel" target="8" />
+      <module name="springboot-order-mybatis-seata" target="1.8" />
       <module name="springcloudalibaba" target="1.5" />
       <module name="stock" target="8" />
       <module name="stock (1)" target="8" />
@@ -36,6 +38,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="order" options="" />
+      <module name="springboot-order-mybatis-seata" options="-parameters" />
       <module name="springcloudalibaba" options="" />
       <module name="stock" options="" />
     </option>
