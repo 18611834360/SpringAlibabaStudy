@@ -5,9 +5,9 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.tulingxueyuan.order.mapper.OrderInfoMapper;
 import com.tulingxueyuan.order.pojo.OrderInfo;
 import com.tulingxueyuan.order.service.OrderService;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,10 +32,14 @@ public class OrderController {
     OrderInfoMapper orderInfoMapper;
 
     @RequestMapping("/getByOrderId")
-    @Transactional
+    @GlobalTransactional
     public OrderInfo getById() {
         System.out.println("selectByPrimaryId!!!!");
-        orderInfoMapper.updateByPrimaryKey(new OrderInfo(1,1,"修改后的苹果"))；
+        OrderInfo orderInfo = new OrderInfo();
+        orderInfo.setOrderId(1);
+        orderInfo.setGoodsId(1);
+        orderInfo.setOrderName("修改后的33");
+        orderInfoMapper.updateByPrimaryKey(orderInfo);
         return orderInfoMapper.selectByPrimaryKey(1);
     }
 

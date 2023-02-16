@@ -26,6 +26,9 @@ spring:
             password: nacos
             dataId: order-sentinel-flow-rule    #对应nacos中的配置dataId
             rule-type: flow
+    alibaba:
+      seata:
+        tx-service-group: guangzhou
 
 
   #druid+mysql数据源配置

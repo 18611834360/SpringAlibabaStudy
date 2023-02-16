@@ -1,5 +1,6 @@
 package com.tulingxueyuan.order.pojo;
 
+
 public class OrderInfo {
     private Integer orderId;
 
