@@ -3,7 +3,9 @@ package com.tulingxueyuan.order.controller;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.tulingxueyuan.order.mapper.OrderInfoMapper;
+import com.tulingxueyuan.order.mapper.StockInfoMapper;
 import com.tulingxueyuan.order.pojo.OrderInfo;
+import com.tulingxueyuan.order.pojo.StockInfo;
 import com.tulingxueyuan.order.service.OrderService;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +42,25 @@ public class OrderController {
         orderInfo.setGoodsId(1);
         orderInfo.setOrderName("修改后的33");
         orderInfoMapper.updateByPrimaryKey(orderInfo);
+
+        //远程调用:
+        String msg = restTemplate.getForObject("http://order-ribbon-nacos-sentinel-sky-seata-service/order/substock", String.class);
+
+
         return orderInfoMapper.selectByPrimaryKey(1);
+    }
+
+    @Autowired
+    StockInfoMapper stockInfoMapper;
+    @RequestMapping("/substock")
+    @GlobalTransactional
+    public StockInfo substock() {
+        System.out.println("substock!!!!");
+        StockInfo stockInfo = new StockInfo();
+        stockInfo.setGoodsId(1);
+        stockInfo.setTotalNumber(1000);
+        stockInfoMapper.updateByPrimaryKey(stockInfo);
+        return stockInfoMapper.selectByPrimaryKey(1);
     }
 
 
