@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/order-balancer-nacosconfig/order-balancer-nacosconfig.iml" filepath="$PROJECT_DIR$/order-balancer-nacosconfig/order-balancer-nacosconfig.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-openfeign/order-openfeign.iml" filepath="$PROJECT_DIR$/order-openfeign/order-openfeign.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-ribbon/order-ribbon.iml" filepath="$PROJECT_DIR$/order-ribbon/order-ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-ribbon-nacos-sentinel-sky-seata/order-ribbon-nacos-sentinel-sky-seata.iml" filepath="$PROJECT_DIR$/order-ribbon-nacos-sentinel-sky-seata/order-ribbon-nacos-sentinel-sky-seata.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-ribbon-sentinel/order-ribbon-sentinel.iml" filepath="$PROJECT_DIR$/order-ribbon-sentinel/order-ribbon-sentinel.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-order-mybatis-seata/springboot-order-mybatis-seata.iml" filepath="$PROJECT_DIR$/springboot-order-mybatis-seata/springboot-order-mybatis-seata.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloudalibaba.iml" filepath="$PROJECT_DIR$/springcloudalibaba.iml" />

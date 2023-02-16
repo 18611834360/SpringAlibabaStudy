@@ -1,0 +1,71 @@
+server:
+  port:
+    9110
+
+# nacos 服务注册配置
+spring:
+  application:
+    name: order-ribbon-nacos-sentinel-sky-seata-service  #nacos 服务名称
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8847 #nacos 服务其地址
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+        ip: 127.0.0.1
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8858
+      web-context-unify: false  #解决链路树问题，默认为true时没有维护链路树
+      datasource:
+        flow-rule:   #可以自定义
+          nacos:
+            servver-addr : 127.0.0.1:8847
+            username: nacos
+            password: nacos
+            dataId: order-sentinel-flow-rule    #对应nacos中的配置dataId
+            rule-type: flow
+
+
+  #druid+mysql数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot_mybatis?charaterEncoding=utf8
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: 'root'
+    #数据源其他配置
+    validationQuery: SELECT 1 from dual
+    poolPrepareStatements: true
+
+    filters: swat,wall
+    maxPoolPrepareStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+    schema: classpath:sql/schema.sql
+    druid:
+      stat-view-servlet:
+        enabled: true    #启动数据库连接池等相关监控
+        allow: 127.0.0.1
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin
+      web-stat-filter:
+        enabled: true   #启动访问监控过滤
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+#    initialization-mode: always
+#设置mybatis
+mybatis:
+  mapper-locations: classpath:com/tulingxueyuan/order/mapper/*Mapper.xml
+  type-aliases-package: com.tulingxueyuan.mybatis.entity
+
+#stock-service:
+#  ribbon:
+#    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+#ribbon:
+#  eager-load:
+#    enabled: true
+#    clients: stock-service

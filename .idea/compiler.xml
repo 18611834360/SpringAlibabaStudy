@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="order-balancer-nacosconfig" />
         <module name="order-balancer" />
+        <module name="order-ribbon-nacos-sentinel-sky-seata" />
         <module name="order-ribbon-sentinel" />
         <module name="springboot-order-mybatis-seata" />
         <module name="order-openfeign" />
@@ -26,6 +27,7 @@
       <module name="order-openfeign" target="8" />
       <module name="order-ribbon" target="8" />
       <module name="order-ribbon (1)" target="8" />
+      <module name="order-ribbon-nacos-sentinel-sky-seata" target="8" />
       <module name="order-ribbon-sentinel" target="8" />
       <module name="springboot-order-mybatis-seata" target="1.8" />
       <module name="springcloudalibaba" target="1.5" />

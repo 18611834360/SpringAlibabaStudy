@@ -1,4 +1,4 @@
-package com.tulingxueyuan.conig;
+package com.tulingxueyuan.order.controller.conig;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
