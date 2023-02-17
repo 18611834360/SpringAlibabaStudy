@@ -35,7 +35,8 @@ public class OrderController {
 
     @RequestMapping("/getByOrderId")
     @GlobalTransactional
-    public OrderInfo getById() {
+    @SentinelResource(value = "getByOrderId", blockHandler = "flowBlockHandler")
+    public OrderInfo getByOrderId() {
         System.out.println("selectByPrimaryId!!!!");
         OrderInfo orderInfo = new OrderInfo();
         orderInfo.setOrderId(1);
@@ -54,6 +55,7 @@ public class OrderController {
     StockInfoMapper stockInfoMapper;
     @RequestMapping("/substock")
     @GlobalTransactional
+    @SentinelResource(value = "substock", blockHandler = "flowBlockHandler")
     public StockInfo substock() {
         System.out.println("substock!!!!");
         StockInfo stockInfo = new StockInfo();

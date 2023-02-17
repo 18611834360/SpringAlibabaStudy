@@ -16,20 +16,26 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <!--nacos 服务注册发现-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <!--            <version>2.2.5.RELEASE</version>-->
         </dependency>
+
+        <!--  sentinel 依赖      -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
+        <!--  sentinel #nacos持久化支持     -->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-nacos</artifactId>
         </dependency>
+
+        <!--  skywalking 依赖      -->
         <dependency>
             <groupId>org.apache.skywalking</groupId>
             <artifactId>apm-toolkit-trace</artifactId>
@@ -41,7 +47,7 @@
             <version>8.5.0</version>
         </dependency>
 
-        <!--  整合mybatis      -->
+        <!--  整合druid+mybatis     -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -55,29 +61,22 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.2.2</version>
         </dependency>
-
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>8.0.31</version>
             <scope>runtime</scope>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.alibaba</groupId>-->
-        <!--            <artifactId>druid</artifactId>-->
-        <!--            <version>1.2.3</version>-->
-        <!--        </dependency>-->
-        <!-- druid 场景启动器       -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.2.3</version>
         </dependency>
 
+        <!--  seata 依赖      -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
-<!--            <version>2.2.5.RELEASE</version>-->
         </dependency>
     </dependencies>
 
