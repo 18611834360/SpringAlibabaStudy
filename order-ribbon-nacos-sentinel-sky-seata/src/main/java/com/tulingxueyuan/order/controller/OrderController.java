@@ -2,6 +2,8 @@ package com.tulingxueyuan.order.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
+import com.tulingxueyuan.order.RocketMQMsgReceiver;
+import com.tulingxueyuan.order.RocketMQMsgProducer;
 import com.tulingxueyuan.order.mapper.OrderInfoMapper;
 import com.tulingxueyuan.order.mapper.StockInfoMapper;
 import com.tulingxueyuan.order.pojo.OrderInfo;
@@ -32,6 +34,23 @@ public class OrderController {
 
     @Autowired
     OrderInfoMapper orderInfoMapper;
+
+    @Autowired
+    RocketMQMsgProducer msgProducer;
+    @Autowired
+    RocketMQMsgReceiver msgReceiver;
+
+    @RequestMapping("/rocketSndMsg")
+    @SentinelResource(value = "rocketSndMsg", blockHandler = "flowBlockHandler")
+    public String rocketSndMsg() throws InterruptedException {
+
+        System.out.println("准备发送消息");
+        String topic = "my-boot-topic";
+        String msg = "message from my springboot producer!";
+        msgProducer.sendMsg(topic, msg);
+        System.out.println("消息发送成功:"+topic+" "+msg);
+        return "order-ribbon-sentinel-service:order-service/order/get调用:" + port;
+    }
 
     @RequestMapping("/getByOrderId")
     @GlobalTransactional
