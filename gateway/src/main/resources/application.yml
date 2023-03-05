@@ -12,8 +12,8 @@ spring:
 #          enabled: true
       routes:
         - id: order-route
-          uri: lb://order-ribbon-sentinel-service
-#          order: 8001
+          uri: lb://order-ribbon-nacos-sentinel-sky-seata-service
+          #          order: 8001
           predicates:
             - Path=/order-service/**
 #            ‐ After=2019‐12‐31T23:59:59.789+08:00[Asia/Shanghai]            - After=
@@ -35,7 +35,7 @@ spring:
 
 
     nacos:
-      server-addr: 127.0.0.1:8847
+      server-addr: 127.0.0.1:8848
       discovery:
         username: nacos
         password: nacos

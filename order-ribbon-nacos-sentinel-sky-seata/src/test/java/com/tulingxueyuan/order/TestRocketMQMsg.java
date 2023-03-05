@@ -12,7 +12,7 @@
 //public class TestRocketMQMsg {
 //
 //    @Autowired
-//    RocketMQMsgProducer msgProducer;
+//    RocketMQMsgProducer1 msgProducer;
 //
 //    @Test
 //    public void contextloads(){

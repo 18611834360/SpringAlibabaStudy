@@ -2,8 +2,8 @@ package com.tulingxueyuan.order.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
-import com.tulingxueyuan.order.RocketMQMsgReceiver;
 import com.tulingxueyuan.order.RocketMQMsgProducer;
+import com.tulingxueyuan.order.RocketMQMsgReceiver;
 import com.tulingxueyuan.order.mapper.OrderInfoMapper;
 import com.tulingxueyuan.order.mapper.StockInfoMapper;
 import com.tulingxueyuan.order.pojo.OrderInfo;
@@ -40,6 +40,9 @@ public class OrderController {
     @Autowired
     RocketMQMsgReceiver msgReceiver;
 
+    @Autowired
+    OrderService orderService;
+
     @RequestMapping("/rocketSndMsg")
     @SentinelResource(value = "rocketSndMsg", blockHandler = "flowBlockHandler")
     public String rocketSndMsg() throws InterruptedException {
@@ -62,6 +65,8 @@ public class OrderController {
         orderInfo.setGoodsId(1);
         orderInfo.setOrderName("修改后的33");
         orderInfoMapper.updateByPrimaryKey(orderInfo);
+
+        //本地服务调用
 
         //远程调用:
         String msg = restTemplate.getForObject("http://order-ribbon-nacos-sentinel-sky-seata-service/order/substock", String.class);
@@ -95,8 +100,7 @@ public class OrderController {
 //        return "order-ribbon-sentinel-service:order-service/order/add调用:"+port;
     }
 
-    @Autowired
-    OrderService orderService;
+
 
     @RequestMapping("/add")
     @SentinelResource(value="add",blockHandler="flowBlockHandler")
@@ -104,9 +108,9 @@ public class OrderController {
 
 
         System.out.println("下单成功");
-        String msg = restTemplate.getForObject("http://order-ribbon-sentinel-service/order/get",String.class);
+//        String msg = restTemplate.getForObject("http://order-ribbon-sentinel-service/order/get",String.class);
         String s=orderService.getOrderById();
-        return "order-service调用："+port+msg+s;
+        return "order-service调用："+port+s;
 //        return "order-ribbon-sentinel-service:order-service/order/add调用:"+port;
     }
 

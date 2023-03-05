@@ -93,7 +93,31 @@ spring:
       web-stat-filter:
         enabled: true   #启动访问监控过滤
         exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+
+#  springboot admin client to server hostport
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:7001
+        instance:
+          prefer-ip: true  #基于ip地址向服务器注册，默认域名注册
 #    initialization-mode: always
+
+#actuator 配置生效
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    enabled-by-default: true  #开启所有监控点
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+    info:
+      enabled: false
+    metrics:
+      enabled: true
 
 
 #设置mybatis
@@ -120,3 +144,6 @@ rocketmq:
   name-server: 127.0.0.1:9876
   producer:
     group: my-producer-group-test
+
+
+

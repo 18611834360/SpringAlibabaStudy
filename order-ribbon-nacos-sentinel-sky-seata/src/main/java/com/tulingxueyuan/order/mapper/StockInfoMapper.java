@@ -10,6 +10,7 @@ public interface StockInfoMapper {
 
     int deleteByExample(StockInfoExample example);
 
+
     int deleteByPrimaryKey(Integer goodsId);
 
     int insert(StockInfo record);

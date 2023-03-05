@@ -1,5 +1,6 @@
 package com.tulingxueyuan.order.service;
 
+import org.apache.skywalking.apm.toolkit.trace.Tag;
 import org.apache.skywalking.apm.toolkit.trace.Trace;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderService {
     @Trace
+    @Tag(key="getOrderById",value="returnObj")
     public String getOrderById(){
         System.out.println("get order by id");
         return "orderid is ： 99999999";

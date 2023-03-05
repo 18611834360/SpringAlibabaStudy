@@ -29,6 +29,8 @@
       <module name="order-ribbon (1)" target="8" />
       <module name="order-ribbon-nacos-sentinel-sky-seata" target="8" />
       <module name="order-ribbon-sentinel" target="8" />
+      <module name="SpringAdminServer" target="8" />
+      <module name="springboot-admin-server" target="8" />
       <module name="springboot-order-mybatis-seata" target="1.8" />
       <module name="springcloudalibaba" target="1.5" />
       <module name="stock" target="8" />
